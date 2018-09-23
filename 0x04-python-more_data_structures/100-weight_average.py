@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
-    if my_list is None or my_list = []:
+    if my_list is None or my_list == []:
         return 0
     mult_tup = [x * y for x, y in my_list]
     sum_tup = sum(mult_tup)
