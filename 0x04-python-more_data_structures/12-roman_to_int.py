@@ -13,9 +13,11 @@ def roman_to_int(roman_string):
             if rln is 2 and i is rln:
                 return roman_dict[rn] - pr
             tot += roman_dict[rn]
-            if roman_dict[rn] > pr and i > 2:
+            if roman_dict[rn] > pr and i > 1:
                 minu += (2 * pr)
             pr = roman_dict[rn]
             i += 1
         tot = tot - minu
         return tot
+    else:
+        return None
