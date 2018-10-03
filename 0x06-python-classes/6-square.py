@@ -61,10 +61,11 @@ class Square:
 
     def my_print(self):
         a, b = self.__position
+        if self.__size is 0:
+            print("")
+            return
         for i in range(b):
             print("")
         for i in range(self.__size):
             print("{}{}".format(a * " ", self.__size * "#"),  end="")
-            print("")
-        if self.__size is 0:
             print("")
