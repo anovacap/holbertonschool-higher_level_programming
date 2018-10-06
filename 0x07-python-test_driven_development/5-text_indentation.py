@@ -18,10 +18,9 @@ def text_indentation(text):
     q = "".join(l)
     d = q.splitlines()
     i = 0
-    print(d)
     for w in d:
         i += 1
-        s = w.strip(" ")
+        s = w.strip()
         if i < len(d):
             print(s)
         else:
