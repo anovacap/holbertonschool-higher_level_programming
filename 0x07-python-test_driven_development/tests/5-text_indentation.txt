@@ -1,0 +1,32 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("")
+
+>>> text_indentation("""Lorem:            ?      \n""")
+Lorem:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation("\n A \n ? \n A \n : \n A \n , \n")
+<BLANKLINE>
+A
+?
+<BLANKLINE>
+<BLANKLINE>
+A
+:
+<BLANKLINE>
+<BLANKLINE>
+A
+,
+>>> text_indentation("tyu\n a bc     ")
+tyu
+a bc
+
+>>> text_indentation("\n a bc     ")
+<BLANKLINE>
+a bc
+>>> text_indentation("hjk\n abc    ")
+hjk
+abc
