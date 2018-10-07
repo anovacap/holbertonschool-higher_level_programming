@@ -12,6 +12,8 @@ def matrix_divided(matrix, div):
     if matrix is None:
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
+    if div is float('inf') or div is float('nan'):
+        raise TypeError("div must be a number")
     it = iter(matrix)
     len_mat = len(next(it))
     if not all(len(k) == len_mat for k in it):
