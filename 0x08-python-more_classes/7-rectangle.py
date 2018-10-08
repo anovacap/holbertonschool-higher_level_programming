@@ -37,7 +37,6 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        print("we are in the width setter")
         self.__width = value
     """
     function height getter
@@ -54,7 +53,6 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        print("we are inside of height setter")
         self.__height = value
     """
     function area returns rectangle area
