@@ -74,6 +74,8 @@ class Rectangle:
         """
         if self.width is 0 or self.height is 0:
             return ""
+        if self.height is 1:
+            return str(self.print_symbol) * self.width
         s = ""
         for i in range(self.height - 1):
             s += str(self.print_symbol) * self.width + "\n"
