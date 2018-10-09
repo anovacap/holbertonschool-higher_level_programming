@@ -5,80 +5,90 @@ Defines Class Rectangle
 
 
 class Rectangle:
-    __width = None
-    __height = None
+
     number_of_instances = 0
-    """
-    function __init__ initializes class Rectangle
-    """
+
     def __init__(self, width=0, height=0):
+        """
+        __init__ method
+        Args: width (int), height (int)
+        """
         self.__width = width
         self.__height = height
         Rectangle.number_of_instances += 1
-    """
-    Defines function width to retrieve __width
-    """
+
     @property
     def width(self):
         return self.__width
-    """
-    funtction width setter
-    """
+
     @width.setter
     def width(self, value):
+        """
+        width
+        Args: value (int)
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-    """
-    function height getter
-    """
+
     @property
     def height(self):
         return self.__height
-    """
-    function height setter
-    """
+
     @height.setter
     def height(self, value):
+        """
+        height
+        Args: value (int)
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-    """
-    function area returns rectangle area
-    """
+
     def area(self):
+        """
+        area
+        retruns: self.width * self.height
+        """
         area = self.width * self.height
         return area
-    """
-    function perimeter returns rectangle perimeter
-    """
+
     def perimeter(self):
+        """
+        perimeter
+        returns: (self.width + self.height) * 2
+        """
         if self.width is 0 or self.height is 0:
             return 0
         perimeter = (self.width + self.height) * 2
         return perimeter
-    """
-    function __str__ returns printed area with #
-    """
+
     def __str__(self):
+        """
+        __str__
+        returns: printed rectangle
+        """
         s = ""
         for i in range(self.height):
             s += "#" * self.width + "\n"
             if i is self.height - 1:
                 s += "#" * self.width
         return s
-    """
-    function __repr__ returns a string representation of the rectangle
-    """
+
     def __repr__(self):
+        """
+        __repr__ method
+        returns: Rectangle(width, heaight)
+        """
         return "Rectangle({}, {})".format(self.width, self.height)
-    """
-    function __del__ deletes an instance of rectangle
-    """
+
     def __del__(self):
+        """
+        __del__ method
+        """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
