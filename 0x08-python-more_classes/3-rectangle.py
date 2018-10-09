@@ -69,8 +69,10 @@ class Rectangle:
         __str__
         returns: printed rectangle
         """
+        if self.width is 0 or self.height is 0:
+            return " "
         s = ""
-        for i in range(self.height -1):
+        for i in range(self.height - 1):
             s += "#" * self.width + "\n"
             if i is self.height - 2:
                 s += "#" * self.width
