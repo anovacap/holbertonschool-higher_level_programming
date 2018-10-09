@@ -70,7 +70,7 @@ class Rectangle:
         returns: printed rectangle
         """
         if self.width is 0 or self.height is 0:
-            return " "
+            return ""
         s = ""
         for i in range(self.height - 1):
             s += "#" * self.width + "\n"
