@@ -30,6 +30,9 @@ class Rectangle(BaseGeometry):
     Class Rectangle
     """
     def __init__(self, width, height):
+        """
+        func - __init__ - args - width, height
+        """
         self.__width = width
         self.__height = height
         self.integer_validator(self.__width, self.__height)
