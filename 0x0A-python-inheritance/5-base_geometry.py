@@ -2,5 +2,7 @@
 """
 Defines class BaseGeometry
 """
+
+
 class BaseGeometry:
     pass
