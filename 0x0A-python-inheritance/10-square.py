@@ -55,22 +55,12 @@ class Square(Rectangle):
     Class Square - Type - Rectangle
     """
     def __init__(self, size):
+        self.integer_validator("size", size)
         self.__size = size
-
-    def integer_validator(self, size):
-        """
-        Func integer_validator - validates value - args - __size
-        """
-        if type(self.__size) is not int:
-            raise TypeError("{} must be an integer".format(self.__size))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(self.__size))
-
-    def area(self):
-        return self.__size * self.__size
+        super().__init__(self.__size, self.__size)
 
     def __str__(self):
         """
         func str - no args
         """
-        return str("[Rectangle] {}/{}".format(self.__size, self.__size))
+        return "[Rectangle] {}/{}".format(self.__size, self.__size)
