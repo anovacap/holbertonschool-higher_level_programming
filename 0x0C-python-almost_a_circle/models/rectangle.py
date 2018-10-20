@@ -3,7 +3,7 @@
 Class Rectangle
 """
 from models.base import Base
-
+import sys
 
 class Rectangle(Base):
     """
@@ -105,3 +105,12 @@ class Rectangle(Base):
         if not args:
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
+
+    def to_dictionary(self):
+        d = {}
+        d['id'] = self.id
+        d['width'] = self.width
+        d['height'] = self.height
+        d['x'] = self.x
+        d['y'] = self.y
+        return d
