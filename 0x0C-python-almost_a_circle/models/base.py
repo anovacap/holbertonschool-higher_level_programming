@@ -1,4 +1,4 @@
-#!/usr/bin/python 3
+#!/usr/bin/python3
 import json
 """Class Base - the base for all subsequent classes"""
 
