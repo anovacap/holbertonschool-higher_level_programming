@@ -33,12 +33,13 @@ class Square(Rectangle):
         """func update - args - *args, **kwargs"""
         if args:
             for i, arg in enumerate(args):
-                self.id = args[0]
+                if i is 0:
+                    self.id = args[0]
                 if i is 1:
                     self.size = args[1]
                 elif i is 2:
                     self.x = args[2]
-                elif i is 4:
+                elif i is 3:
                     self.y = args[3]
         if not args:
             for key, value in kwargs.items():
