@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines class Square(Rectangle)"""
+"""Defines class Square(Rectangle) 6 functions"""
 from models.rectangle import Rectangle
 
 
