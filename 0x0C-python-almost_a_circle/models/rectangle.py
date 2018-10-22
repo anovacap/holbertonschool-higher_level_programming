@@ -15,21 +15,23 @@ class Rectangle(Base):
         """
         func __init__ - args - width, height, x=0, y=0, id=None
         """
+
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        self.id = id
         super().__init__(self.id)
 
     @property
     def width(self):
         """func width getter"""
+
         return self.__width
 
     @width.setter
     def width(self, value):
         """func width setter - args - value"""
+
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -40,11 +42,13 @@ class Rectangle(Base):
     @property
     def height(self):
         """func height getter"""
+
         return self.__height
 
     @height.setter
     def height(self, value):
         """func height setter - args - value"""
+
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -54,11 +58,13 @@ class Rectangle(Base):
     @property
     def x(self):
         """func x getter"""
+
         return self.__x
 
     @x.setter
     def x(self, value):
         """func x setter - args - value"""
+
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
@@ -66,21 +72,25 @@ class Rectangle(Base):
     @property
     def y(self):
         """func y getter"""
+
         return self.__y
 
     @y.setter
     def y(self, value):
         """func y setter - args - value"""
+
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
     def area(self):
         """func - area - no args"""
+
         return self.__width * self.__height
 
     def display(self):
         """func display - no args"""
+
         for i in range(self.__y):
             print("")
         for i in range(self.__height):
@@ -88,11 +98,13 @@ class Rectangle(Base):
 
     def __str__(self):
         """func __str__ - no args"""
+
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """func update - args - *args, **kwargs"""
+
         for i, arg in enumerate(args):
             self.id = args[0]
             if i is 1:
@@ -108,6 +120,8 @@ class Rectangle(Base):
                 self.__setattr__(key, value)
 
     def to_dictionary(self):
+        """func to_dictionary"""
+
         d = {}
         d['id'] = self.id
         d['width'] = self.width
