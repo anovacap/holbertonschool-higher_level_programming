@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Class Rectangle
+Class Rectangle 14 functions
 """
 from models.base import Base
 import sys
