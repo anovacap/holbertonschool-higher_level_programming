@@ -15,7 +15,6 @@ class Base:
         func - __init__ - args - id=None - id = __nb_objects or public instance
         attribute
         """
-        self.id = id
         Base.__nb_objects += 1
         if id is not None:
             self.id = id
