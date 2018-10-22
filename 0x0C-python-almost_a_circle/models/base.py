@@ -29,9 +29,8 @@ class Base:
         returns the JSON string representation of list_dictionaries type(str)
         """
 
-        l = []
         if list_dictionaries is None or list_dictionaries is "":
-            return l
+            return "[]"
         else:
             js_str = json.dumps(list_dictionaries)
             return js_str
