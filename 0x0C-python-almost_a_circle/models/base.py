@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """Class Base - the base for all subsequent classes"""
+import json
 
 
 class Base:
@@ -15,6 +15,7 @@ class Base:
         func - __init__ - args - id=None - id = __nb_objects or public instance
         attribute
         """
+
         Base.__nb_objects += 1
         if id is not None:
             self.id = id
@@ -27,6 +28,7 @@ class Base:
         """static func - args - list_dictionaries - a list of dictionaries
         returns the JSON string representation of list_dictionaries type(str)
         """
+
         l = []
         if list_dictionaries is None or list_dictionaries is "":
             return l
@@ -37,6 +39,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """classmethod- save_to_file- args- list_objs- """
+
         l = []
         if list_objs is None or list_objs is "":
             with open("{}.json".format(cls.__name__), mode='w') as a_file:
@@ -51,6 +54,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """static func from_json_string - args - json_string"""
+
         l = []
         if json_string is None or json_string is "":
             return l
@@ -61,6 +65,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """class func create - args - dictionary"""
+
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
@@ -71,6 +76,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """class method load_from_file - no args"""
+
         l = []
         file = "{}.json".format(cls.__name__)
         if not file:
