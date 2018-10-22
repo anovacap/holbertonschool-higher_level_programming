@@ -8,16 +8,19 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """func __init__ - args - size, x=0, y=0, id=None"""
+
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """func __str__ - no args"""
+
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
         """func width getter"""
+
         return self.width
 
     @size.setter
@@ -46,6 +49,7 @@ class Square(Rectangle):
                 self.__setattr__(key, value)
 
     def to_dictionary(self):
+        """func to_dictionar - no arg"""
         d = {}
         d['id'] = self.id
         d['size'] = self.size
