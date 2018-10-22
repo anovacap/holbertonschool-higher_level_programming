@@ -81,9 +81,6 @@ class Base:
         try:
             with open(file) as a_file:
                 l = cls.from_json_string(a_file.read())
-            for x in l:
-                print(x)
-                print(l)
             return [cls.create(**x) for x in l]
         except FileNotFoundError:
             return l
