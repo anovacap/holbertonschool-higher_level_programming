@@ -25,7 +25,9 @@ File|Task
 12-model_state_update_id_2.py | changes the name of a State object from the database hbtn_0e_6_usa
 13-model_state_delete_a.py | deletes all State objects with a name containing the letter a from the database hbtn_0e_6_usa
 14-model_city_fetch_by_state.py | similar to model_state.py named model_city.py that contains the class definition of a City
-## Directory Name | Description
+## Directory 
+---
+Name|Description
 ---|---
 holbertonschool-higher_level_programming | Python functions - projects + SQL
 ## Author
