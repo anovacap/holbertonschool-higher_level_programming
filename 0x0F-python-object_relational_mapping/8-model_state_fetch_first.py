@@ -22,7 +22,10 @@ def main(argv):
     Base.metadata.create_all(engine)
     s = session()
     for state in s.query(State).order_by(State.id)[0:1]:
-        print("{}: {}".format(state.id, state.name))
+        if not state:
+            print("Nothing")
+        else:
+            print("{}: {}".format(state.id, state.name))
     s.close()
 
 if __name__ == "__main__":
