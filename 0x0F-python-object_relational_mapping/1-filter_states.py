@@ -5,7 +5,7 @@ import sys
 
 
 def main(argv):
-    """func - main - args"""
+    """func - main - argv"""
     if len(argv) != 4:
         print("Enter 3 arguments")
         return
@@ -16,7 +16,7 @@ def main(argv):
                          passwd=argv[2],
                          db=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     for row in cur.fetchall():
         print(row)
