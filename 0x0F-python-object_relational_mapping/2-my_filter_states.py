@@ -18,8 +18,7 @@ def main(argv):
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name = '{}'".format(argv[4]))
 
-    for row in cur.fetchall():
-        print(row)
+    print("{}".format(cur.fetchone()))
     cur.close()
     db.close()
 
