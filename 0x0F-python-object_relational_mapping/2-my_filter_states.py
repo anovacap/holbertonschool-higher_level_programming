@@ -16,9 +16,11 @@ def main(argv):
                          passwd=argv[2],
                          db=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}'".format(argv[4]))
+    cur.execute("SELECT * FROM states WHERE"
+                " name = BINARY '{}'".format(argv[4]))
 
-    print("{}".format(cur.fetchone()))
+    for row in cur.fetchall():
+        print(row)
     cur.close()
     db.close()
 
