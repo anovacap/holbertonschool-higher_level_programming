@@ -22,9 +22,11 @@ def main(argv):
     session.configure(bind=engine)
     Base.metadata.create_all(engine)
     s = session()
-    for state in s.query(State).order_by(State.id).\
-            filter(State.name == argv[4]):
+    state = s.query(State).filter(State.name == argv[4]).first()
+    if state:
         print("{}".format(state.id))
+    else:
+        print("Not found")
     s.close()
 
 if __name__ == "__main__":
