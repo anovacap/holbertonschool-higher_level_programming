@@ -10,7 +10,6 @@ def main(argv):
     if len(argv) != 5:
         print("Enter 4 arguments")
         return
-
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=argv[1],
@@ -21,6 +20,7 @@ def main(argv):
 
     for row in cur.fetchall():
         print(row)
+    cur.close()
     db.close()
 
 if __name__ == "__main__":
