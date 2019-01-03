@@ -21,13 +21,12 @@ def main(argv):
     session.configure(bind=engine)
     Base.metadata.create_all(engine)
     s = session()
-    for state in s.query(State).order_by(State.id)[0:1]:
-        if not state:
-            print("Nothing")
-        else:
-            print("{}: {}".format(state.id, state.name))
+    state = s.query(State).first()
+    if state is None:
+        print("Nothing")
+    else:
+        print("{}: {}".format(state.id, state.name))
     s.close()
-
 if __name__ == "__main__":
     import sys
     main(sys.argv)
