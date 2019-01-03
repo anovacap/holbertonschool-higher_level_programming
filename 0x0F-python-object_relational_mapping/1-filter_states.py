@@ -18,7 +18,7 @@ def main(argv):
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     for row in cur.fetchall():
-        print(row)
+        print("{}".format(row))
     cur.close()
     db.close()
 
