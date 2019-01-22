@@ -14,8 +14,8 @@ def main():
         js = req.json()
         c = 0
         for d in js:
-            print("{}: {}".format(d.get('sha'),
-                  d.get('commit').get('author').get('name')))
+            print("{}: {}".format(d['sha'],
+                  d.['commit']['author']['name']))
             c += 1
             if c == 10:
                 break
