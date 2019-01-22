@@ -6,18 +6,18 @@ import sys
 
 
 def main():
-    t_results = []
     full_url = 'https://swapi.co/api/people/?search=' + sys.argv[1]
     r = requests.get(full_url)
     js = r.json()
-    t_results = t_results + js['results']
+    print("Number of results: {}".format(js['count']))
     while js['next'] is not None:
-        print("Number of results: {}".format(js['count']))
+        res = js['results']
+        for x in res:
+            print(x['name'])
+        if js['next'] is None:
+            break
         r = requests.get(js['next'])
         js = r.json()
-        t_results = t_results + js['results']
-    for x in t_results:
-        print(x['name'])
 
 if __name__ == "__main__":
     main()
