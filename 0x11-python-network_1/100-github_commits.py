@@ -12,9 +12,13 @@ def main():
         f_url = "https://api.github.com/repos/" + u + "/" + r + "/commits"
         req = requests.get(f_url)
         js = req.json()
+        c = 0
         for d in js:
             print("{}: {}".format(d.get('sha'),
                   d.get('commit').get('author').get('name')))
+            c += 1
+            if c == 10:
+                break
     except TypeError and KeyError:
         print("None")
 
