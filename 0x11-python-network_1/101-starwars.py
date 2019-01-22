@@ -12,6 +12,7 @@ def main():
     print("Number of results: {}".format(js['count']))
     for x in js['results']:
         print(x['name'])
+    js['next']
 
 if __name__ == "__main__":
     main()
