@@ -13,7 +13,8 @@ def main():
         req = requests.get(f_url)
         js = req.json()
         for d in js:
-            print("{}: {}".format(d['sha'], d['commit']['author']['name']))
+            print("{}: {}".format(d.get('sha'),
+                  d.get('commit').get('author').get('name')))
     except TypeError and KeyError:
         print("None")
 
