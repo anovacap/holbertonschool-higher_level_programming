@@ -15,7 +15,7 @@ def main():
         c = 0
         for d in js:
             print("{}: {}".format(d['sha'],
-                  d.['commit']['author']['name']))
+                  d['commit']['author']['name']))
             c += 1
             if c == 10:
                 break
