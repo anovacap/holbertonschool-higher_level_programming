@@ -5,6 +5,10 @@ if (process.argv.length <= 3) {
 } else {
   let ar = process.argv.slice(2);
   let newAr = ar.sort();
-  newAr.reverse();
-  console.log(parseInt(newAr[1], 10));
+  if (Math.sign(newAr[1]) === -1) {
+    console.log(parseInt(newAr[1], 10));
+  } else {
+    newAr.reverse();
+    console.log(parseInt(newAr[1], 10));
+  }
 }
