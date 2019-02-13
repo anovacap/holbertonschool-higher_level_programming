@@ -6,5 +6,5 @@ if (process.argv.length <= 3) {
   let ar = process.argv.slice(2);
   let newAr = ar.sort();
   newAr.reverse();
-  console.log(newAr[1]);
+  console.log(parseInt(newAr[1], 10));
 }
