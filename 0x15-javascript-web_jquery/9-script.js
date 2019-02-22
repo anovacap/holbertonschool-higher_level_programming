@@ -1,5 +1,6 @@
 const $ = window.$;
-const url = 'https://fourtonfish.com/hellosalut/?lang=fr';
+const atr = $.attr('html');
+const url = 'https://fourtonfish.com/hellosalut/?lang=' + atr;
 $.get(url, function (dat) {
   $('#hello').html(dat.hello);
 });
